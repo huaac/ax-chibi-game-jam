@@ -8,6 +8,8 @@ public class EnemyKnightBehavior : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
 
     private float speed;
+    private int LoR;
+    //Left is positive 1, R is negative 1
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +17,13 @@ public class EnemyKnightBehavior : MonoBehaviour
         speed = 6f;
         Physics2D.IgnoreLayerCollision(6, 8); //ignore frame and enemy layer
         Physics2D.IgnoreLayerCollision(7, 8); //ignore player and enemy layer
+        if(transform.position.x > 0)
+        {
+            LoR = -1;
+        }
+        else{
+            LoR = 1;
+        }
     }
 
     // Update is called once per frame
@@ -25,6 +34,8 @@ public class EnemyKnightBehavior : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(1 * speed, rb.velocity.y);
+        
+        //change 1 to a -1 to make it go the opposite way
+        rb.velocity = new Vector2(LoR * speed, rb.velocity.y);
     }
 }

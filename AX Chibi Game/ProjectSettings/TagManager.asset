@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Frame
   - Floor
+  - Despawn
   layers:
   - Default
   - TransparentFX

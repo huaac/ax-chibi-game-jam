@@ -7,6 +7,7 @@ public class EnemyKnightBehavior : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
 
+    private SpriteRenderer spriteRender;
     private float speed;
     private int LoR;
     //Left is positive 1, R is negative 1
@@ -23,6 +24,8 @@ public class EnemyKnightBehavior : MonoBehaviour
         }
         else{
             LoR = 1;
+            spriteRender = this.GetComponent<SpriteRenderer>();
+            spriteRender.flipX = true;
         }
     }
 

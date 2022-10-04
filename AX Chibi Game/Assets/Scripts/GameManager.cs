@@ -6,13 +6,15 @@ public class GameManager : MonoBehaviour
 {
     private float nextAttackTime;
     private float randomMinionTime;
+    private float randomTimeHorde;
     public GameObject enemyprefab;
     public List<GameObject> spawnLocations;
     // Start is called before the first frame update
     void Start()
     {
         nextAttackTime = 2f;
-        randomMinionTime = 1f;
+        randomMinionTime = 1.5f;
+        randomTimeHorde = 5f;
     }
 
     // Update is called once per frame
@@ -51,15 +53,35 @@ public class GameManager : MonoBehaviour
         {
             int randLocation = Random.Range(0, 2);
             DelayedMinions(randLocation);
-            float randFloat = Random.Range(1f, 3.5f);
+            float randFloat = Random.Range(1.5f, 4f);
             randomMinionTime += randFloat;
+        }
+        if (Time.time > randomTimeHorde)
+        {
+            int randLocation = Random.Range(2, 4);
+            FullForceHorde(randLocation);
+            float increaseRandomTime = Random.Range(3.5f, 8f);
+            randomTimeHorde += increaseRandomTime;
         }
     }
 
     void DelayedMinions(int spawnLocation)
     {
         GameObject enemy = (GameObject)Instantiate(enemyprefab, spawnLocations[spawnLocation].transform.position, spawnLocations[spawnLocation].transform.rotation);
-        print("1");
+    }
+
+    void FullForceHorde(int spawnLocation)
+    {
+        StartCoroutine(SpawnEnemyInHorde(spawnLocation));
+    }
+
+    private IEnumerator SpawnEnemyInHorde(int spawnLoc)
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject enemy = (GameObject)Instantiate(enemyprefab, spawnLocations[spawnLoc].transform.position, spawnLocations[spawnLoc].transform.rotation);
+            yield return new WaitForSeconds(0.2f);
+        }
     }
 
     void Fireball()

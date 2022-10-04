@@ -106,6 +106,15 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     private bool is_grounded;
 
+    private float activeMoveSpeed;
+    public float dashSpeed;
+
+    public float dashLength = .5f, dashCooldown = 1f;
+
+    private float dashCounter;
+    private float dashCoolCounter;
+
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -120,6 +129,8 @@ public class PlayerMovement : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         is_grounded = false;
+
+        activeMoveSpeed = speed;
     }
 
     void Update()
@@ -136,13 +147,37 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if(dashCoolCounter <= 0 && dashCounter <= 0)
+            {
+                activeMoveSpeed = dashSpeed;
+                dashCounter = dashLength;
+            }
+        }
+
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+            if (dashCounter <= 0)
+            {
+                activeMoveSpeed = speed;
+                dashCoolCounter = dashCooldown;
+            }
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
+
         UpdateSprite();
         UpdateAnimation();
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(move_x * speed, rb.velocity.y);
+        rb.velocity = new Vector2(move_x * activeMoveSpeed, rb.velocity.y);
     }
 
     private void IsGrounded()

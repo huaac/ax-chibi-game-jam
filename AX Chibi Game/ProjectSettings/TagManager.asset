@@ -7,6 +7,9 @@ TagManager:
   - Frame
   - Floor
   - Despawn
+  - Undefined
+  - Slash
+  - Stab
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - Frame
   - Player
   - Enemy
-  - 
+  - BossAttacks
   - 
   - 
   - 

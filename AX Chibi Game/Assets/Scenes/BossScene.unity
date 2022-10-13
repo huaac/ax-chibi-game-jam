@@ -1374,6 +1374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1471493846}
   - component: {fileID: 1471493845}
+  - component: {fileID: 1471493847}
   m_Layer: 0
   m_Name: throne background
   m_TagString: Untagged
@@ -1446,6 +1447,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1471493847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471493844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add34a96e08f8cf48abd3af58191dd3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1827709166 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8103938588084927862, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}

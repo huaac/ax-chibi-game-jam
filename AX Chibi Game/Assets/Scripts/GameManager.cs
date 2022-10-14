@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<GameObject> minionSpawns;
     [SerializeField] private List<GameObject> anchors;
 
+
     [SerializeField] private GameObject attackSpawnPrefab;
+    [SerializeField] private GameObject Exclamation;
     private GameObject slashSpawnObject;
 
     // Start is called before the first frame update
@@ -81,16 +83,20 @@ public class GameManager : MonoBehaviour
 
     void DelayedMinions(int spawnLocation)
     {
-        GameObject enemy = (GameObject)Instantiate(enemyprefab, minionSpawns[spawnLocation].transform.position, minionSpawns[spawnLocation].transform.rotation);
+        StartCoroutine(RedWarning(minionSpawns[spawnLocation].transform));
+        StartCoroutine(DelayedSpawn(enemyprefab, minionSpawns[spawnLocation].transform, minionSpawns[spawnLocation].transform));
+        //GameObject enemy = (GameObject)Instantiate(enemyprefab, minionSpawns[spawnLocation].transform.position, minionSpawns[spawnLocation].transform.rotation);
     }
 
     void FullForceHorde(int spawnLocation)
     {
+        StartCoroutine(RedWarning(minionSpawns[spawnLocation].transform));
         StartCoroutine(SpawnEnemyInHorde(spawnLocation));
     }
 
     private IEnumerator SpawnEnemyInHorde(int spawnLoc)
     {
+        yield return new WaitForSeconds(1f);
         for (int i = 0; i < 5; i++)
         {
             GameObject enemy = (GameObject)Instantiate(enemyprefab, minionSpawns[spawnLoc].transform.position, minionSpawns[spawnLoc].transform.rotation);
@@ -104,8 +110,10 @@ public class GameManager : MonoBehaviour
         Transform fireSpawn = attackSpawnObject.transform;
 
         float spawnTX = Random.Range(anchors[0].transform.position.x, anchors[2].transform.position.x);
-        fireSpawn.position = new Vector3(4.25f, spawnTX, 0f);
-        GameObject fireObject = (GameObject)Instantiate(fireBallPrefab, fireSpawn);
+        fireSpawn.position = new Vector3(spawnTX, 4.5f, 0f);
+        StartCoroutine(RedWarning(fireSpawn));
+        StartCoroutine(DelayedSpawn(fireBallPrefab, fireSpawn, fireSpawn));
+        //GameObject fireObject = (GameObject)Instantiate(fireBallPrefab, fireSpawn);
     }
 
     void Slash(int leftOrRight)
@@ -118,13 +126,17 @@ public class GameManager : MonoBehaviour
                 float spawnLX = anchors[0].transform.position.x;
                 float spawnLY = Random.Range(anchors[1].transform.position.y, anchors[0].transform.position.y);
                 slashSpawn.position = new Vector3(spawnLX, spawnLY, 0.0f);
-                GameObject slashObjectL = (GameObject)Instantiate(slashPrefab, slashSpawn);
+                StartCoroutine(RedWarning(slashSpawn));
+                StartCoroutine(DelayedSpawn(slashPrefab, slashSpawn, slashSpawn));
+                //GameObject slashObjectL = (GameObject)Instantiate(slashPrefab, slashSpawn);
                 break;
             case 1:
                 float spawnRX = anchors[2].transform.position.x;
                 float spawnRY = Random.Range(anchors[3].transform.position.y, anchors[2].transform.position.y);
                 slashSpawn.position = new Vector3(spawnRX, spawnRY, 0.0f);
-                GameObject slashObjectR = (GameObject)Instantiate(slashPrefab, slashSpawn);
+                StartCoroutine(RedWarning(slashSpawn));
+                StartCoroutine(DelayedSpawn(slashPrefab, slashSpawn, slashSpawn));
+                //GameObject slashObjectR = (GameObject)Instantiate(slashPrefab, slashSpawn);
                 break;
         }
     }
@@ -138,5 +150,18 @@ public class GameManager : MonoBehaviour
         float spawnY = Random.Range(anchors[1].transform.position.y, anchors[0].transform.position.y);
         stabSpawn.position = new Vector3(spawnX, spawnY, 0.0f);
         GameObject stabObject = (GameObject)Instantiate(stabPrefab, stabSpawn);
+    }
+
+    private IEnumerator RedWarning(Transform spawnLocation)
+    {
+        GameObject exclaim = (GameObject)Instantiate(Exclamation, spawnLocation);
+        yield return new WaitForSeconds(1f);
+        Destroy(exclaim);
+    }
+
+    private IEnumerator DelayedSpawn(GameObject prefab, Transform spawnLocation, Transform spawnRotation)
+    {
+        yield return new WaitForSeconds(1f);
+        GameObject attackObject = (GameObject)Instantiate(prefab, spawnLocation.position, spawnRotation.rotation);
     }
 }

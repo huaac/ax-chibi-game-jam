@@ -1920,6 +1920,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 311527368450912441, guid: 8408ec72852810a4da1039d61fd2d461, type: 3}
     - target: {fileID: 8103938589045911500, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
+      propertyPath: Exclamation
+      value: 
+      objectReference: {fileID: 7045217141599327066, guid: a259c600f39a5dc4a85663b36cf1792a, type: 3}
+    - target: {fileID: 8103938589045911500, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
       propertyPath: slashSpawnL
       value: 
       objectReference: {fileID: 0}

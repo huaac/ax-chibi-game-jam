@@ -12,7 +12,8 @@ public class Despawn : MonoBehaviour
         }
         if (collision.gameObject.tag == "Slash")
         {
-            Destroy(collision.gameObject.transform.parent.gameObject);
+            Destroy(collision.gameObject);
+            
         }
     }
 }

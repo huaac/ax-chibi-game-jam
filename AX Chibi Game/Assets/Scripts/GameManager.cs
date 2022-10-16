@@ -44,9 +44,9 @@ public class GameManager : MonoBehaviour
             default:
                 gameOverText.active = false;
                 //Randomly decides the next attack and has a cooldown of 2 seconds
-                if(Time.time <= 166)
+                if(Time.timeSinceLevelLoad <= 166)
                 {
-                    if (Time.time > nextAttackTime)
+                    if (Time.timeSinceLevelLoad > nextAttackTime)
                     {
                         int randNum = Random.Range(0, 8);
                         switch (randNum)
@@ -80,14 +80,14 @@ public class GameManager : MonoBehaviour
                         nextAttackTime += 1.8f;
                     }
                     //random cooldown and spawns minion
-                    if (Time.time > randomMinionTime)
+                    if (Time.timeSinceLevelLoad > randomMinionTime)
                     {
                         int randLocation = Random.Range(0, 2);
                         DelayedMinions(randLocation);
                         float randFloat = Random.Range(1.5f, 4f);
                         randomMinionTime += randFloat;
                     }
-                    if (Time.time > randomTimeHorde)
+                    if (Time.timeSinceLevelLoad > randomTimeHorde)
                     {
                         int randLocation = Random.Range(2, 4);
                         FullForceHorde(randLocation);

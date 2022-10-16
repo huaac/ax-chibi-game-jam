@@ -10,7 +10,7 @@ public class Despawn : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.tag == "Slash")
+        if (collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);
             

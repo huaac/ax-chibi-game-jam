@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossAttachBehaviors : MonoBehaviour
 {
+    [SerializeField] private int typeOfAttack;
     [SerializeField] private Rigidbody2D rb;
     private SpriteRenderer spriteRender;
     private float speed;
@@ -15,12 +16,12 @@ public class BossAttachBehaviors : MonoBehaviour
         Physics2D.IgnoreLayerCollision(3, 9); //ignore ground and Bossattacks layer
         Physics2D.IgnoreLayerCollision(6, 9); //ignore frame and BossAttacks layer
         // Physics2D.IgnoreLayerCollision(7, 9); //ignore player and Bossattacks layer
-        switch (this.tag)
+        switch (typeOfAttack)
         {
-            case "Slash":
+            case 1:
                 SlashStart();
                 break;
-            case "Stab":
+            case 2:
                 StabStart();
                 break;
         }
@@ -29,9 +30,9 @@ public class BossAttachBehaviors : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        switch (this.tag)
+        switch (typeOfAttack)
         {
-            case "Slash":
+            case 1:
                 rb.velocity = new Vector2(LoR * speed, rb.velocity.y);
                 break;
         }

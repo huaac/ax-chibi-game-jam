@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -21,6 +22,19 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log(_currHeartNum);
         isInvincible = false;
         is_transparent = false;
+    }
+
+    void OnEnable()
+    {
+        print("testing to see if enabling works");
+        _currHeartNum = 3;
+        Debug.Log(_currHeartNum);
+        isInvincible = false;
+        is_transparent = false;
+        for(int i = 0; i < 3; i++)
+        {
+            _hearts[i].SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -88,5 +102,10 @@ public class PlayerHealth : MonoBehaviour
     private void ScaleModelTo(Vector3 scale)
     {
         model.transform.localScale = scale;
+    }
+
+    public int OutOfHealth()
+    {
+        return _currHeartNum;
     }
 }

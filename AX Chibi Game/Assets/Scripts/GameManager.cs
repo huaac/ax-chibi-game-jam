@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     private float nextAttackTime;
     private float randomMinionTime;
     private float randomTimeHorde;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject gameOverText;
     [SerializeField] private GameObject enemyprefab;
     [SerializeField] private GameObject slashPrefab;
     [SerializeField] private GameObject stabPrefab;
@@ -22,63 +24,78 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameOverText.active = false;
         nextAttackTime = 2f;
         randomMinionTime = 1.5f;
         randomTimeHorde = 5f;
     }
 
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Randomly decides the next attack and has a cooldown of 2 seconds
-        if (Time.time > nextAttackTime)
+        int playerAlive = player.GetComponent<PlayerHealth>().OutOfHealth();
+        switch(playerAlive)
         {
-            int randNum = Random.Range(0, 8);
-            switch (randNum)
-            {
-                case 0:
-                    Stab();
-                    break;
-                case 1:
-                    Slash(Random.Range(0, 2));
-                    break;
-                case 2:
-                    Slash(Random.Range(0, 2));
-                    break;
-                case 3:
-                    Stab();
-                    break;
-                case 4:
-                    Slash(Random.Range(0, 2));
-                    break;
-                case 5:
-                    Fireball();
-                    break;
-                case 6:
-                    Stab();
-                    break;
-                case 7:
-                    Fireball();
-                    break;
+            case 0:
+                gameOverText.active = true;
+                StartCoroutine(GameOverDelay());
+                nextAttackTime += 3f;
+                break;
+            default:
+                gameOverText.active = false;
+                //Randomly decides the next attack and has a cooldown of 2 seconds
+                if (Time.time > nextAttackTime)
+                {
+                    int randNum = Random.Range(0, 8);
+                    switch (randNum)
+                    {
+                        case 0:
+                            Stab();
+                            break;
+                        case 1:
+                            Slash(Random.Range(0, 2));
+                            break;
+                        case 2:
+                            Slash(Random.Range(0, 2));
+                            break;
+                        case 3:
+                            Stab();
+                            break;
+                        case 4:
+                            Slash(Random.Range(0, 2));
+                            break;
+                        case 5:
+                            Fireball();
+                            break;
+                        case 6:
+                            Stab();
+                            break;
+                        case 7:
+                            Fireball();
+                            break;
 
-            }
-            nextAttackTime += 2f;
+                    }
+                    nextAttackTime += 1.8f;
+                }
+                //random cooldown and spawns minion
+                if (Time.time > randomMinionTime)
+                {
+                    int randLocation = Random.Range(0, 2);
+                    DelayedMinions(randLocation);
+                    float randFloat = Random.Range(1.5f, 4f);
+                    randomMinionTime += randFloat;
+                }
+                if (Time.time > randomTimeHorde)
+                {
+                    int randLocation = Random.Range(2, 4);
+                    FullForceHorde(randLocation);
+                    float increaseRandomTime = Random.Range(3.5f, 8f);
+                    randomTimeHorde += increaseRandomTime;
+                }
+                break;
         }
-        //random cooldown and spawns minion
-        if (Time.time > randomMinionTime)
-        {
-            int randLocation = Random.Range(0, 2);
-            DelayedMinions(randLocation);
-            float randFloat = Random.Range(1.5f, 4f);
-            randomMinionTime += randFloat;
-        }
-        if (Time.time > randomTimeHorde)
-        {
-            int randLocation = Random.Range(2, 4);
-            FullForceHorde(randLocation);
-            float increaseRandomTime = Random.Range(3.5f, 8f);
-            randomTimeHorde += increaseRandomTime;
-        }
+        
     }
 
     void DelayedMinions(int spawnLocation)
@@ -163,5 +180,11 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         GameObject attackObject = (GameObject)Instantiate(prefab, spawnLocation.position, spawnRotation.rotation);
+    }
+    private IEnumerator GameOverDelay()
+    {
+        yield return new WaitForSeconds(5f);
+        player.GetComponent<PlayerHealth>().enabled = false;
+        player.GetComponent<PlayerHealth>().enabled = true;
     }
 }

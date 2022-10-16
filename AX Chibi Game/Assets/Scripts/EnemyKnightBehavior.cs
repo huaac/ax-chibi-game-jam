@@ -17,7 +17,7 @@ public class EnemyKnightBehavior : MonoBehaviour
     {
         speed = 6f;
         Physics2D.IgnoreLayerCollision(6, 8); //ignore frame and enemy layer
-        Physics2D.IgnoreLayerCollision(7, 8); //ignore player and enemy layer
+        // Physics2D.IgnoreLayerCollision(7, 8); //ignore player and enemy layer
         if(transform.position.x > 0)
         {
             LoR = -1;

@@ -14,7 +14,7 @@ public class BossAttachBehaviors : MonoBehaviour
     {
         Physics2D.IgnoreLayerCollision(3, 9); //ignore ground and Bossattacks layer
         Physics2D.IgnoreLayerCollision(6, 9); //ignore frame and BossAttacks layer
-        Physics2D.IgnoreLayerCollision(7, 9); //ignore player and Bossattacks layer
+        // Physics2D.IgnoreLayerCollision(7, 9); //ignore player and Bossattacks layer
         switch (this.tag)
         {
             case "Slash":

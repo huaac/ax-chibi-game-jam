@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BGSoundScript : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip menuMusic;
 
     [SerializeField]
     private AudioClip openingMusic;
@@ -48,28 +50,50 @@ public class BGSoundScript : MonoBehaviour
     protected virtual void Start() 
     {
         // If the game starts in a menu scene, play the appropriate music
-        PlayOpeningMusic();
+        PlayMenuMusic();
     }
 
     /// <summary>
-     /// Plays the music designed for the menus
-     /// This method is static so that it can be called from anywhere in the code.
-     /// </summary>
-     static public void PlayOpeningMusic ()
-     {
-         if (instance != null) {
-             if (instance.source != null) {
-                 instance.source.Stop();
-                 instance.source.clip = instance.openingMusic;
-                 instance.source.Play();
-             }
-         } else {
-             Debug.LogError("Unavailable MusicPlayer component");
-         }
-     }
+    /// Plays the music designed for the menus
+    /// This method is static so that it can be called from anywhere in the code.
+    /// </summary>
+    static public void PlayMenuMusic ()
+    {
+        if (instance != null) {
+            if (instance.source != null) {
+                instance.source.Stop();
+                instance.source.clip = instance.menuMusic;
+                instance.source.Play();
+            }
+        } 
+        else 
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+
+
+    /// <summary>
+    /// Plays the music designed for the opening cutscene
+    /// This method is static so that it can be called from anywhere in the code.
+    /// </summary>
+    static public void PlayOpeningMusic()
+    {
+        if (instance != null) {
+            if (instance.source != null) {
+                instance.source.Stop();
+                instance.source.clip = instance.openingMusic;
+                instance.source.Play();
+            }
+        } 
+        else 
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
      
     /// <summary>
-    /// Plays the music designed for outside menus
+    /// Plays the music designed for boss fight
     /// This method is static so that it can be called from anywhere in the code.
     /// </summary>
     static public void PlayBossMusic ()
@@ -88,44 +112,3 @@ public class BGSoundScript : MonoBehaviour
     }
 
 }
-
-// void Start()
-    // {
-        
-    // }
-    // private static BGSoundScript instance = null;
-    // public static BGSoundScript Instance
-    // {
-    //     get { return instance; }
-    // }
-
-    // void Awake()
-    // {
-    //     if (instance != null && instance != this)
-    //     {
-    //         Destroy(this.gameObject);
-    //         return;
-    //     }
-    //     else
-    //     {
-    //         instance = this;
-    //     }
-    //     DontDestroyOnLoad(this.gameObject);
-    // }
-    // private static BGSoundScript instance;
-
-    // void Awake()
-    // {
-    //   if (instance == null)
-    //     {
-    //         instance = this;
-    //         DontDestroyOnLoad(instance);
-
-    //     }    
-
-    //   else
-    //     {
-    //         Destroy(gameObject);
-    //     }
-       
-    // }

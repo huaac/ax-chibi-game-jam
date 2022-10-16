@@ -40,58 +40,65 @@ public class GameManager : MonoBehaviour
             case 0:
                 gameOverText.active = true;
                 StartCoroutine(GameOverDelay());
-                nextAttackTime += 3f;
                 break;
             default:
                 gameOverText.active = false;
                 //Randomly decides the next attack and has a cooldown of 2 seconds
-                if (Time.time > nextAttackTime)
+                if(Time.time <= 166)
                 {
-                    int randNum = Random.Range(0, 8);
-                    switch (randNum)
+                    if (Time.time > nextAttackTime)
                     {
-                        case 0:
-                            Stab();
-                            break;
-                        case 1:
-                            Slash(Random.Range(0, 2));
-                            break;
-                        case 2:
-                            Slash(Random.Range(0, 2));
-                            break;
-                        case 3:
-                            Stab();
-                            break;
-                        case 4:
-                            Slash(Random.Range(0, 2));
-                            break;
-                        case 5:
-                            Fireball();
-                            break;
-                        case 6:
-                            Stab();
-                            break;
-                        case 7:
-                            Fireball();
-                            break;
+                        int randNum = Random.Range(0, 8);
+                        switch (randNum)
+                        {
+                            case 0:
+                                Stab();
+                                break;
+                            case 1:
+                                Slash(Random.Range(0, 2));
+                                break;
+                            case 2:
+                                Slash(Random.Range(0, 2));
+                                break;
+                            case 3:
+                                Stab();
+                                break;
+                            case 4:
+                                Slash(Random.Range(0, 2));
+                                break;
+                            case 5:
+                                Fireball();
+                                break;
+                            case 6:
+                                Stab();
+                                break;
+                            case 7:
+                                Fireball();
+                                break;
 
+                        }
+                        nextAttackTime += 1.8f;
                     }
-                    nextAttackTime += 1.8f;
+                    //random cooldown and spawns minion
+                    if (Time.time > randomMinionTime)
+                    {
+                        int randLocation = Random.Range(0, 2);
+                        DelayedMinions(randLocation);
+                        float randFloat = Random.Range(1.5f, 4f);
+                        randomMinionTime += randFloat;
+                    }
+                    if (Time.time > randomTimeHorde)
+                    {
+                        int randLocation = Random.Range(2, 4);
+                        FullForceHorde(randLocation);
+                        float increaseRandomTime = Random.Range(3.5f, 8f);
+                        randomTimeHorde += increaseRandomTime;
+                    }
+                    
                 }
-                //random cooldown and spawns minion
-                if (Time.time > randomMinionTime)
+                else
                 {
-                    int randLocation = Random.Range(0, 2);
-                    DelayedMinions(randLocation);
-                    float randFloat = Random.Range(1.5f, 4f);
-                    randomMinionTime += randFloat;
-                }
-                if (Time.time > randomTimeHorde)
-                {
-                    int randLocation = Random.Range(2, 4);
-                    FullForceHorde(randLocation);
-                    float increaseRandomTime = Random.Range(3.5f, 8f);
-                    randomTimeHorde += increaseRandomTime;
+                    break;
                 }
                 break;
         }
@@ -130,6 +137,7 @@ public class GameManager : MonoBehaviour
         fireSpawn.position = new Vector3(spawnTX, 4.5f, 0f);
         StartCoroutine(RedWarning(fireSpawn));
         StartCoroutine(DelayedSpawn(fireBallPrefab, fireSpawn, fireSpawn));
+
         //GameObject fireObject = (GameObject)Instantiate(fireBallPrefab, fireSpawn);
     }
 

@@ -26,7 +26,6 @@ public class PlayerHealth : MonoBehaviour
 
     void OnEnable()
     {
-        print("testing to see if enabling works");
         _currHeartNum = 3;
         Debug.Log(_currHeartNum);
         isInvincible = false;
@@ -35,6 +34,8 @@ public class PlayerHealth : MonoBehaviour
         {
             _hearts[i].SetActive(true);
         }
+        invincibilityDurationSeconds = 3;
+        invincibilityDeltaTime = 0.15f;
     }
 
     // Update is called once per frame

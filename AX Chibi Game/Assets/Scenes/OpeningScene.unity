@@ -726,7 +726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &302597735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,7 +739,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c37301463442be4f9ba0b0a8892efbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: ThroneScene
+  nextSceneName: ThroneScene
+  seconds: 90
 --- !u!4 &302597736
 Transform:
   m_ObjectHideFlags: 0
@@ -3015,8 +3016,6 @@ PlayableDirector:
     value: {fileID: 1269199619}
   - key: {fileID: 3429995303655698586, guid: dbc5264a8fc18d248b0e6353589f4c63, type: 2}
     value: {fileID: 0}
-  - key: {fileID: -6569437695616906523, guid: dbc5264a8fc18d248b0e6353589f4c63, type: 2}
-    value: {fileID: 302597734}
   - key: {fileID: -2153184710708920232, guid: dbc5264a8fc18d248b0e6353589f4c63, type: 2}
     value: {fileID: 0}
   - key: {fileID: 3349435914793149857, guid: dbc5264a8fc18d248b0e6353589f4c63, type: 2}

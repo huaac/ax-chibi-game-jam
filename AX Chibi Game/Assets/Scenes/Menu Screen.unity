@@ -497,7 +497,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1526518376}
         m_TargetAssemblyTypeName: LoadNextScene, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -518,7 +518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c37301463442be4f9ba0b0a8892efbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
+  nextSceneName: 
+  seconds: 0
 --- !u!1 &555772142
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c37301463442be4f9ba0b0a8892efbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: OpeningScene
+  nextSceneName: 
+  seconds: 0
 --- !u!1 &994550103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,12 +1064,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526518375}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c37301463442be4f9ba0b0a8892efbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: OpeningScene
+  nextSceneName: OpeningScene
+  seconds: 1
 --- !u!4 &1526518377
 Transform:
   m_ObjectHideFlags: 0

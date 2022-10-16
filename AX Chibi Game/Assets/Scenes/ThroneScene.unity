@@ -867,7 +867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &660183722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,7 +880,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c37301463442be4f9ba0b0a8892efbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: BossScene
+  nextSceneName: BossScene
+  seconds: 57
 --- !u!4 &660183723
 Transform:
   m_ObjectHideFlags: 0
@@ -2813,8 +2814,8 @@ PlayableDirector:
     value: {fileID: 453228037}
   - key: {fileID: -5892659117916862725, guid: 74178886d505aa54a9bd6c49b40a79fa, type: 2}
     value: {fileID: 1299598273}
-  - key: {fileID: -7718781740308700351, guid: 74178886d505aa54a9bd6c49b40a79fa, type: 2}
-    value: {fileID: 660183721}
+  - key: {fileID: 438731785972418884, guid: 74178886d505aa54a9bd6c49b40a79fa, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1924562933

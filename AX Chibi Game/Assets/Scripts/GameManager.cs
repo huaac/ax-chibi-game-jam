@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
+                    
                     break;
                 }
                 break;

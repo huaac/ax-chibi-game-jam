@@ -29,6 +29,11 @@ public class LoadNextScene : MonoBehaviour
         SceneManager.LoadScene(nextSceneName);
     }
 
+    public void ReLoadScene()
+    {
+        SceneManager.LoadScene(currScene);
+    }
+
     // public void LoadScene(string scene_name)
     // {
     //     SceneManager.LoadScene(scene_name);

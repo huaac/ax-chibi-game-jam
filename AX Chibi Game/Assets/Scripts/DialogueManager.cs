@@ -58,6 +58,6 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator TextDuration()
     {
         yield return new WaitForSeconds(3f);
-        quips[startIndex].active = false;
+        quips[startIndex-1].active = false;
     }
 }

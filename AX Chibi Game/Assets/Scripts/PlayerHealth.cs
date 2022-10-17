@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _currHeartNum = 3;
+        _currHeartNum = 5;
         Debug.Log(_currHeartNum);
         isInvincible = false;
         is_transparent = false;

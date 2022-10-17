@@ -882,6 +882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSceneName: BossScene
   seconds: 57
+  screen: {fileID: 0}
 --- !u!4 &660183723
 Transform:
   m_ObjectHideFlags: 0
@@ -929,6 +930,7 @@ MonoBehaviour:
   menuMusic: {fileID: 8300000, guid: e4868f6c79ef88544b13e1bb6040c706, type: 3}
   openingMusic: {fileID: 8300000, guid: fc54556271807ce48b5bc367f2454825, type: 3}
   bossMusic: {fileID: 8300000, guid: 854507577497d48429cf9115b706c496, type: 3}
+  endingMusic: {fileID: 0}
   source: {fileID: 685700320}
 --- !u!82 &685700320
 AudioSource:
@@ -1136,7 +1138,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -783733189
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
@@ -1392,7 +1394,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -783733189
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
@@ -1600,7 +1602,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -783733189
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
@@ -2642,7 +2644,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -783733189
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
@@ -2745,7 +2747,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BY FIGHTING ME TO THE DEATH!
+  m_Text: BY FIGHTING ME FOR THE REST OF YOUR LIFE!
 --- !u!222 &1836846759
 CanvasRenderer:
   m_ObjectHideFlags: 0

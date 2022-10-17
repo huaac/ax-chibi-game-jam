@@ -202,7 +202,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator DestroyPlaceholder(GameObject placeholder)
     {
-        yield return new WaitForSeconds(.05f);
+        yield return new WaitForSeconds(1.1f);
         Destroy(placeholder);
     }
 }

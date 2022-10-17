@@ -15,6 +15,9 @@ public class PlayerHealth : MonoBehaviour
     private bool is_transparent;
     [SerializeField] private SpriteRenderer model;
 
+    public AudioSource audioSource;
+    public AudioClip hit_sfx;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -89,6 +92,7 @@ public class PlayerHealth : MonoBehaviour
                 // When a hunter collides with a ghost, hunter's health falls to 0 and is downed
                 if (_currHeartNum != 0)
                 {
+                    audioSource.PlayOneShot(hit_sfx, 0.6f);
                     _hearts[_currHeartNum-1].SetActive(false);
                     _currHeartNum--;
                     Debug.Log("taken damage");

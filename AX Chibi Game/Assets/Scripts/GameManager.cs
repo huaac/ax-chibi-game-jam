@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-
+                    
                     break;
                 }
                 break;
@@ -138,7 +138,7 @@ public class GameManager : MonoBehaviour
         fireSpawn.position = new Vector3(spawnTX, 4.5f, 0f);
         StartCoroutine(RedWarning(fireSpawn));
         StartCoroutine(DelayedSpawn(fireBallPrefab, fireSpawn, fireSpawn));
-        StartCoroutine(DestroyPlaceholder(attackSpawnObject));
+
         //GameObject fireObject = (GameObject)Instantiate(fireBallPrefab, fireSpawn);
     }
 
@@ -165,7 +165,6 @@ public class GameManager : MonoBehaviour
                 //GameObject slashObjectR = (GameObject)Instantiate(slashPrefab, slashSpawn);
                 break;
         }
-        StartCoroutine(DestroyPlaceholder(attackSpawnObject));
     }
 
     void Stab()
@@ -196,11 +195,5 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         player.GetComponent<PlayerHealth>().enabled = false;
         player.GetComponent<PlayerHealth>().enabled = true;
-    }
-
-    private IEnumerator DestroyPlaceholder(GameObject placeholder)
-    {
-        yield return new WaitForSeconds(1f);
-        Destroy(placeholder);
     }
 }

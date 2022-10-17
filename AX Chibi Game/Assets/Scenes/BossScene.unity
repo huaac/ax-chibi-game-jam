@@ -3436,32 +3436,6 @@ Transform:
   m_Father: {fileID: 257390706}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2000966618 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8103938589045911497, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
-  m_PrefabInstance: {fileID: 8103938589631536536}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2000966621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000966618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3522eb761abff14993582ae0933f9d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  quips:
-  - {fileID: 308256383}
-  - {fileID: 1755067327}
-  - {fileID: 459322568}
-  - {fileID: 1482519119}
-  - {fileID: 1286604011}
-  - {fileID: 2066717176}
-  - {fileID: 986140379}
-  - {fileID: 1451031457}
 --- !u!1 &2057766701
 GameObject:
   m_ObjectHideFlags: 0
@@ -3781,6 +3755,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2000966621, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
+      propertyPath: quips.Array.data[0]
+      value: 
+      objectReference: {fileID: 308256383}
+    - target: {fileID: 2000966621, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
+      propertyPath: quips.Array.data[1]
+      value: 
+      objectReference: {fileID: 1755067327}
+    - target: {fileID: 2000966621, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
+      propertyPath: quips.Array.data[2]
+      value: 
+      objectReference: {fileID: 459322568}
+    - target: {fileID: 2000966621, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
+      propertyPath: quips.Array.data[3]
+      value: 
+      objectReference: {fileID: 1482519119}
+    - target: {fileID: 2000966621, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
+      propertyPath: quips.Array.data[4]
+      value: 
+      objectReference: {fileID: 1286604011}
+    - target: {fileID: 2000966621, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
+      propertyPath: quips.Array.data[5]
+      value: 
+      objectReference: {fileID: 2066717176}
+    - target: {fileID: 2000966621, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
+      propertyPath: quips.Array.data[6]
+      value: 
+      objectReference: {fileID: 986140379}
+    - target: {fileID: 2000966621, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
+      propertyPath: quips.Array.data[7]
+      value: 
+      objectReference: {fileID: 1451031457}
     - target: {fileID: 8103938589045911497, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
       propertyPath: m_Name
       value: Game_Manager
@@ -3834,48 +3840,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1620148519}
     - target: {fileID: 8103938589045911500, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
-      propertyPath: slashSpawn
-      value: 
-      objectReference: {fileID: 7102799620618555662, guid: d6078a58ff0554842a4fd97f8f15125e, type: 3}
-    - target: {fileID: 8103938589045911500, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
-      propertyPath: stabPrefab
-      value: 
-      objectReference: {fileID: 311527368450912441, guid: 8408ec72852810a4da1039d61fd2d461, type: 3}
-    - target: {fileID: 8103938589045911500, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
-      propertyPath: Exclamation
-      value: 
-      objectReference: {fileID: 7045217141599327066, guid: a259c600f39a5dc4a85663b36cf1792a, type: 3}
-    - target: {fileID: 8103938589045911500, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
-      propertyPath: slashSpawnL
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8103938589045911500, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
-      propertyPath: slashSpawnR
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8103938589045911500, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
-      propertyPath: slashprefab
-      value: 
-      objectReference: {fileID: 7102799620618555661, guid: d6078a58ff0554842a4fd97f8f15125e, type: 3}
-    - target: {fileID: 8103938589045911500, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 949027430}
-    - target: {fileID: 8103938589045911500, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
-      propertyPath: fireBallPrefab
-      value: 
-      objectReference: {fileID: 6562733782482870710, guid: 3e418325af751b7428723d61257efdd7, type: 3}
-    - target: {fileID: 8103938589045911500, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
-      propertyPath: slashSpawnPrefab
-      value: 
-      objectReference: {fileID: 7102799620618555661, guid: d6078a58ff0554842a4fd97f8f15125e, type: 3}
-    - target: {fileID: 8103938589045911500, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
-      propertyPath: slashSpawnprefab
-      value: 
-      objectReference: {fileID: 7102799620618555661, guid: d6078a58ff0554842a4fd97f8f15125e, type: 3}
-    - target: {fileID: 8103938589045911500, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}
-      propertyPath: attackSpawnPrefab
-      value: 
-      objectReference: {fileID: 7102799620618555661, guid: d6078a58ff0554842a4fd97f8f15125e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ea1e0be703d1d94996dbb02ff0dadaa, type: 3}

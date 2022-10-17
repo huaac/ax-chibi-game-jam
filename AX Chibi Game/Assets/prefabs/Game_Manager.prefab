@@ -284,6 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8103938589045911498}
   - component: {fileID: 8103938589045911500}
+  - component: {fileID: 2000966621}
   m_Layer: 0
   m_Name: Game_Manager
   m_TagString: Untagged
@@ -322,10 +323,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6e53dd9c513316449a9e1d8ac7113b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  gameOverText: {fileID: 0}
   enemyprefab: {fileID: 8206938070713022308, guid: 705b591275e8d4d458023f5681c0163d, type: 3}
   slashPrefab: {fileID: 2233953044461613127, guid: cab3d6cf4b8b3cf4996cda00876e42a1, type: 3}
-  stabPrefab: {fileID: 0}
-  fireBallPrefab: {fileID: 0}
+  stabPrefab: {fileID: 311527368450912441, guid: 8408ec72852810a4da1039d61fd2d461, type: 3}
+  fireBallPrefab: {fileID: 6562733782482870710, guid: 3e418325af751b7428723d61257efdd7, type: 3}
   minionSpawns:
   - {fileID: 8103938588493457907}
   - {fileID: 8103938588084927862}
@@ -336,3 +339,26 @@ MonoBehaviour:
   - {fileID: 1097362251}
   - {fileID: 168777438}
   - {fileID: 900131654}
+  attackSpawnPrefab: {fileID: 7102799620618555661, guid: d6078a58ff0554842a4fd97f8f15125e, type: 3}
+  Exclamation: {fileID: 7045217141599327066, guid: a259c600f39a5dc4a85663b36cf1792a, type: 3}
+--- !u!114 &2000966621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103938589045911497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3522eb761abff14993582ae0933f9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quips:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

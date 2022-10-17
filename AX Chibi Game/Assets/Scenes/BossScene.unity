@@ -1011,6 +1011,7 @@ MonoBehaviour:
   menuMusic: {fileID: 8300000, guid: e4868f6c79ef88544b13e1bb6040c706, type: 3}
   openingMusic: {fileID: 8300000, guid: fc54556271807ce48b5bc367f2454825, type: 3}
   bossMusic: {fileID: 8300000, guid: 854507577497d48429cf9115b706c496, type: 3}
+  endingMusic: {fileID: 8300000, guid: dfe8a63158c82cd44919f9d5d5094ffa, type: 3}
   source: {fileID: 558434817}
 --- !u!82 &558434817
 AudioSource:

@@ -23,6 +23,10 @@ public class ChangeMusic : MonoBehaviour
         {
             BGSoundScript.PlayBossMusic();
         }
+        else if(scene_name == "EndingScene")
+        {
+            BGSoundScript.PlayEndingMusic();
+        }
 
     }
 

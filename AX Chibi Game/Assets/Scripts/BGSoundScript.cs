@@ -14,6 +14,9 @@ public class BGSoundScript : MonoBehaviour
     private AudioClip bossMusic;
 
     [SerializeField]
+    private AudioClip endingMusic;
+
+    [SerializeField]
     /// <summary>
     /// The component that plays the music
     /// </summary>
@@ -102,6 +105,25 @@ public class BGSoundScript : MonoBehaviour
             if (instance.source != null) {
                 instance.source.Stop();
                 instance.source.clip = instance.bossMusic;
+                instance.source.Play();
+            }
+         } 
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+
+    /// <summary>
+    /// Plays the music designed for end music
+    /// This method is static so that it can be called from anywhere in the code.
+    /// </summary>
+    static public void PlayEndingMusic ()
+    {
+        if (instance != null) {
+            if (instance.source != null) {
+                instance.source.Stop();
+                instance.source.clip = instance.endingMusic;
                 instance.source.Play();
             }
          } 

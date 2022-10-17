@@ -18,7 +18,7 @@ public class LoadNextScene : MonoBehaviour
     {
         currScene = SceneManager.GetActiveScene().name;
         //SceneManager.LoadScene(sceneName, 115);
-        if(currScene != "Menu Screen")
+        if(currScene != "Menu Screen" && currScene != "EndingScreen")
         {
             Invoke("LoadScene", seconds);
         }

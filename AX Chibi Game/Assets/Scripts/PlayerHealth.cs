@@ -29,11 +29,11 @@ public class PlayerHealth : MonoBehaviour
 
     void OnEnable()
     {
-        _currHeartNum = 3;
+        _currHeartNum = 5;
         Debug.Log(_currHeartNum);
         isInvincible = false;
         is_transparent = false;
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < 5; i++)
         {
             _hearts[i].SetActive(true);
         }

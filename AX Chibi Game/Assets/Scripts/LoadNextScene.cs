@@ -20,7 +20,7 @@ public class LoadNextScene : MonoBehaviour
     {
         currScene = SceneManager.GetActiveScene().name;
         //SceneManager.LoadScene(sceneName, 115);
-        if(currScene != "Menu Screen" && currScene != "EndingScreen")
+        if(currScene != "Menu Screen" && currScene != "EndingScene2")
         {
             Invoke("LoadScene", seconds);
         }
@@ -28,6 +28,7 @@ public class LoadNextScene : MonoBehaviour
         {
             Invoke("FadeIn", 163f);
         }
+        Debug.Log("NCN: " + nextSceneName);
     }
 
     public void LoadScene()

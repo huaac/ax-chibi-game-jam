@@ -164,8 +164,9 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(DelayedSpawn(slashPrefab, slashSpawn, slashSpawn));
                 //GameObject slashObjectR = (GameObject)Instantiate(slashPrefab, slashSpawn);
                 break;
-                StartCoroutine(DestroyPlaceholder(attackSpawnObject));
+            
         }
+        StartCoroutine(DestroyPlaceholder(attackSpawnObject));
     }
 
     void Stab()
@@ -200,7 +201,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator DestroyPlaceholder(GameObject placeholder)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
         Destroy(placeholder);
     }
 }

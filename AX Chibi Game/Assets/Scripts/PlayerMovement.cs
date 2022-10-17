@@ -134,6 +134,10 @@ public class PlayerMovement : MonoBehaviour
         {
             IsGrounded();
         }
+        else if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)

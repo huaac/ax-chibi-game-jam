@@ -2657,7 +2657,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 754.1792, y: 7}
+  m_AnchoredPosition: {x: 754.1792, y: 70}
   m_SizeDelta: {x: 439.5247, y: 92.6434}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1451031459
@@ -2690,8 +2690,8 @@ MonoBehaviour:
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Ok... Let's Try Again
 --- !u!222 &1451031460
@@ -3461,6 +3461,7 @@ MonoBehaviour:
   - {fileID: 1286604011}
   - {fileID: 2066717176}
   - {fileID: 986140379}
+  - {fileID: 1451031457}
 --- !u!1 &2057766701
 GameObject:
   m_ObjectHideFlags: 0

@@ -55,6 +55,12 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    public void defeated()
+    {
+        quips[7].active = true;
+        StartCoroutine(TextDuration());
+    }
+
     private IEnumerator TextDuration()
     {
         yield return new WaitForSeconds(3f);

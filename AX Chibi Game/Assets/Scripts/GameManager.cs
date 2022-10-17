@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
             case 0:
                 gameOverText.active = true;
                 StartCoroutine(GameOverDelay());
+                GetComponent<DialogueManager>().defeated();
                 break;
             default:
                 gameOverText.active = false;
@@ -194,13 +196,12 @@ public class GameManager : MonoBehaviour
     private IEnumerator GameOverDelay()
     {
         yield return new WaitForSeconds(5f);
-        player.GetComponent<PlayerHealth>().enabled = false;
-        player.GetComponent<PlayerHealth>().enabled = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private IEnumerator DestroyPlaceholder(GameObject placeholder)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(.05f);
         Destroy(placeholder);
     }
 }

@@ -166,8 +166,9 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(DelayedSpawn(slashPrefab, slashSpawn, slashSpawn));
                 //GameObject slashObjectR = (GameObject)Instantiate(slashPrefab, slashSpawn);
                 break;
-                StartCoroutine(DestroyPlaceholder(attackSpawnObject));
+                // StartCoroutine(DestroyPlaceholder(attackSpawnObject));
         }
+        StartCoroutine(DestroyPlaceholder(attackSpawnObject));
     }
 
     void Stab()

@@ -12,6 +12,8 @@ public class EnemyKnightBehavior : MonoBehaviour
     private int LoR;
     //Left is positive 1, R is negative 1
 
+    public ParticleSystem dust;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,5 +37,11 @@ public class EnemyKnightBehavior : MonoBehaviour
         
         //change 1 to a -1 to make it go the opposite way
         rb.velocity = new Vector2(LoR * speed, rb.velocity.y);
+        CreateDust();
+    }
+
+    void CreateDust()
+    {
+        dust.Play();
     }
 }
